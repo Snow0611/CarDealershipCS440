@@ -1,0 +1,30 @@
+title Selling a Car Sequence
+
+Customer->Inventory: searchCarByMakeAndModel(make, model)
+Inventory->Car: getCarDetails()
+Car-->Inventory: return car details
+Inventory-->Customer: show car details
+note over Customer,Inventory: Customer is reviewing the car details
+
+Customer->SalesTransaction: initiatePurchase(car, customer)
+SalesTransaction->Inventory: checkCarAvailability(car)
+Inventory->Car: isAvailable()
+Car-->Inventory: available or not available
+Inventory-->SalesTransaction: availability result
+note over SalesTransaction,Customer: If available, proceed with purchase
+
+SalesTransaction->Customer: negotiatePrice()
+Customer-->SalesTransaction: confirmPrice(price)
+
+SalesTransaction->Customer: processPayment()
+Customer-->SalesTransaction: completePayment()
+
+SalesTransaction->Inventory: removeCarFromInventory(car)
+Inventory-->SalesTransaction: confirm removal
+SalesTransaction->Staff: assignStaffToTransaction(staff)
+SalesTransaction->Customer: transferOwnership(car)
+Customer<--SalesTransaction: ownership transferred
+
+note over Customer,SalesTransaction: Sale completed
+SalesTransaction->Staff: generateSalesReport()
+Staff<--SalesTransaction: sales report generated
