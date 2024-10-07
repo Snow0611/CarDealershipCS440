@@ -1,0 +1,9 @@
+﻿{                                                    // This json item specifies the needed profile information to run the web api
+  "profiles": {
+    "CarDealership440": {                            // Profile for application
+      "commandName": "Project",                      // Run Project command
+      "launchBrowser": true,                         // Opens web browser
+      "applicationUrl": "https://localhost:7179"     // Hosts web api on given url and port
+    }
+  }
+}

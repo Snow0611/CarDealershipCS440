@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Sell a car";
+    Layout = null;
+}
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using CarDealership.Models
+
+@model IEnumerable<Car>
+
+<h2>Enter the plate number of the car to sell</h2>
+
+<form action="/Staff/Sold" method="get">
+    <input type="text" name="plateNum" />
+    <input type="submit" value="Submit">
+</form> 

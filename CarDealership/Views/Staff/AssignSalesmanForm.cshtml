@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Assign Salesman";
+    Layout = null;
+}
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using CarDealership.Models
+
+@model IEnumerable<Car>
+
+<h2>Enter Salesman ID Number to assign to car</h2>
+
+<table>
+    <tr>
+        <th>Plate Number</th>
+        <th>Lot Number</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>Price</th>
+        <th>Color</th>
+        <th>Condition</th>
+        <th>Salesman ID Number</th>
+    </tr>
+    <tbody>
+        @foreach (var car in Model)
+        {
+            <tr>
+                <td>@car.PlateNumber</td>
+                <td>@car.LotID</td>
+                <td>@car.Make</td>
+                <td>@car.Model</td>
+                <td>@car.ModelYear</td>
+                <td>@car.Price</td>
+                <td>@car.Color</td>
+                <td>@car.CarStatus</td>
+                <td>@car.SalesmanID</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<form action="/Staff/AssignSalesman" method="get">
+    <label for="plateNum">Confirm Plate Number:</label>
+    <input type="text" id="plateNum" name="plateNum" />
+    <input type="hidden" name="make" value="null" />
+    <input type="hidden" name="model" value="null" />
+    <input type="hidden" name="modelYear" value="0" />
+    <input type="hidden" name="price" value="0" />
+    <input type="hidden" name="color" value="null" />
+    <input type="hidden" name="carStatus" value="Maintenance" />
+    <br />
+    <label for="salesmanID">Salesman ID:</label>
+    <input type="text" id="salesmanID" name="salesmanID" value="0" />
+    <input type="submit" value="Submit">
+</form> 
