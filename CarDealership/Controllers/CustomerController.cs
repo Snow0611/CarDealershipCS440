@@ -31,12 +31,12 @@ namespace CarDealership.Controllers
             return View(cars);
         }
 
-        // Gets car from database by plate number using getCar() function,
+        // Gets car from database by Make and Model using getCarByMakeModel() function,
         // then returns car detail view with car's data
         [HttpGet]
-        public ActionResult Car(int plateNum) 
+        public ActionResult Car(string make, string model) 
         {
-            var car = _carFunctions.getCar(plateNum);
+            var car = _carFunctions.getCarByMakeModel(make, model);
 
             return View(car);
         }

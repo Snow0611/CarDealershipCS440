@@ -7,9 +7,14 @@
 @using CarDealership.Models
 @model IEnumerable<Car>
 
-<h2>Search for a car by plate number</h2>
+<h2>Search for a car by make and model</h2>
 
 <form action="/Customer/Car" method="get">
-    <input type="text" name="plateNum"/>
+    <label for="make">Make:</label>
+    <input type="text" name="make"/>
+    <br />
+    <label for="model">Model:</label>
+    <input type="text" name="model" />
+    <br />
     <input type="submit" value="Submit">
 </form> 

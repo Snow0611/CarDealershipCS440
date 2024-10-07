@@ -34,12 +34,12 @@ namespace CarDealership.Controllers
             return View(cars);
         }
 
-        // Gets car from database by plate number using getCar() function,
+        // Gets car from database by plate number using getCarByPlate() function,
         // then returns the Car detail view
         [HttpGet]
         public ActionResult Car(int plateNum)
         {
-            var car = _carFunctions.getCar(plateNum);
+            var car = _carFunctions.getCarByPlate(plateNum);
 
             return View(car);
         }
@@ -56,13 +56,13 @@ namespace CarDealership.Controllers
             return View();
         }
 
-        // Gets car from database by plate number using getCar() function,
+        // Gets car from database by plate number using getCarByPlate() function,
         // passes car into sellCar() function,
         // then returns Sold view with car's data
         [HttpGet]
         public ActionResult Sold(int plateNum)
         {
-            var car = _carFunctions.getCar(plateNum);
+            var car = _carFunctions.getCarByPlate(plateNum);
 
             _carFunctions.sellCar(plateNum);
 
@@ -91,11 +91,11 @@ namespace CarDealership.Controllers
             return View();
         }
 
-        // Finds car in database by plate number using getCar() function,
+        // Finds car in database by plate number using getCarByPlate() function,
         // then returns UpdateForm view with car's data
         public ActionResult UpdateForm(int plateNum)
         {
-            var car = _carFunctions.getCar(plateNum);
+            var car = _carFunctions.getCarByPlate(plateNum);
 
             return View(car);
         }
@@ -117,11 +117,11 @@ namespace CarDealership.Controllers
             return View();
         }
 
-        // Finds car in database by plate number using getCar() function
+        // Finds car in database by plate number using getCarByPlate() function
         // then returns MoveCarForm view with car's data
         public ActionResult MoveCarForm(int plateNum)
         {
-            var car = _carFunctions.getCar(plateNum);
+            var car = _carFunctions.getCarByPlate(plateNum);
 
             return View(car);
         }
@@ -164,11 +164,11 @@ namespace CarDealership.Controllers
             return View();
         }
 
-        // Gets car from database by plate number using getCar() function
+        // Gets car from database by plate number using getCarByPlate() function
         // then returns AssignSalesmanForm view with car's data
         public ActionResult AssignSalesmanForm(int plateNum) 
         {
-            var car = _carFunctions.getCar(plateNum);
+            var car = _carFunctions.getCarByPlate(plateNum);
 
             return View(car);
         }

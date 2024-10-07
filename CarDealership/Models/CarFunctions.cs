@@ -22,9 +22,15 @@ namespace CarDealership.Models
         }
 
         // Returns a car as a List object from database by PlateNumber field
-        public List<Car> getCar(int plateNum)
+        public List<Car> getCarByPlate(int plateNum)
         {
             return _databaseContext.Car.Where(c => c.PlateNumber == plateNum).ToList();
+        }
+
+        // Returns all cars as a List object from database by Make and Model fields
+        public List<Car> getCarByMakeModel(string make, string model)
+        {
+            return _databaseContext.Car.Where(c => c.Make.Equals(make) && c.Model.Equals(model)).ToList();
         }
 
         // Removes car from database Car table and
