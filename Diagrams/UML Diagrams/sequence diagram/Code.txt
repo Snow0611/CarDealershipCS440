@@ -13,8 +13,6 @@ Car-->Inventory: available or not available
 Inventory-->SalesTransaction: availability result
 note over SalesTransaction,Customer: If available, proceed with purchase
 
-SalesTransaction->Customer: negotiatePrice()
-Customer-->SalesTransaction: confirmPrice(price)
 
 SalesTransaction->Customer: processPayment()
 Customer-->SalesTransaction: completePayment()
