@@ -4,7 +4,7 @@
 }
 
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@using CarDealership.Models
+@using CarDealership.DataAccess
 
 @model IEnumerable<Car>
 
@@ -40,7 +40,7 @@
     </tbody>
 </table>
 
-<form action="/Staff/AssignSalesman" method="get">
+<form action="/BusinessLogicLayer/AssignSalesman" method="get">
     <label for="plateNum">Confirm Plate Number:</label>
     <input type="text" id="plateNum" name="plateNum" />
     <input type="hidden" name="make" value="null" />

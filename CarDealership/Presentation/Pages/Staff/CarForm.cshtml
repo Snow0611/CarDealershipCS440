@@ -4,13 +4,13 @@
 }
 
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@using CarDealership.Models
+@using CarDealership.DataAccess
 
 @model IEnumerable<Car>
 
 <h2>Enter Car Information</h2>
 
-<form action="/Staff/Add" method="get">
+<form action="/BusinessLogicLayer/Add" method="get">
     <label for="plateNum">Plate Number:</label>
     <input type="text" id="plateNum" name="plateNum" />
     <br />

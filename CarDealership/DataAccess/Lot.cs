@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CarDealership.Models
+namespace CarDealership.DataAccess
 {
     public class Lot
     {

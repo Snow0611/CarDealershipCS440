@@ -4,13 +4,13 @@
 }
 
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@using CarDealership.Models
+@using CarDealership.DataAccess
 
 @model IEnumerable<Staff>
 
 <h2>Select Staff ID number to generate a sales report</h2>
 
-<form action="/Staff/SalesReport" method="get">
+<form action="/BusinessLogicLayer/SalesReport" method="get">
     <input type="text" name="staffID" />
     <input type="submit" value="Submit">
 </form> 

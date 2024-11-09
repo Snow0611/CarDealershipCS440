@@ -1,4 +1,4 @@
-﻿using CarDealership.Models;
+﻿using CarDealership.DataAccess;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarDealership.BusinessLogicLayer
@@ -22,7 +22,9 @@ namespace CarDealership.BusinessLogicLayer
         // Returns Index view for the web site
         public ActionResult Index()
         {
-            return View("~/Presentation/Pages/Index/index.cshtml");
+
+            return RedirectToAction("Index", "PresentationLayer");
+            //return View("~/Presentation/Pages/Index/index.cshtml");
         }
 
         // Returns Index view for the customer
@@ -39,11 +41,22 @@ namespace CarDealership.BusinessLogicLayer
 
         // Gets cars from database using getCars() function,
         // then returns Inventory view with cars' data
-        public ActionResult Inventory()
+        public ActionResult CustomerInventory()
         {
             var cars = _carFunctions.getCars();
 
-            return View("~/Presentation/Pages/Customer/Inventory.cshtml", cars);
+            //return PresentationLayer.CustomerInventory(cars);
+            return RedirectToAction("CustomerInventory", "PresentationLayer", cars);
+            //return View("~/Presentation/Pages/Customer/CustomerInventory.cshtml", cars);
+        }
+
+        // Gets cars from database using getCa    rs() function,
+        // then returns Inventory view with cars' data
+        public ActionResult StaffInventory()
+        {
+            var cars = _carFunctions.getCars();
+
+            return View("~/Presentation/Pages/Staff/StaffInventory.cshtml", cars);
         }
 
         // Gets car from database by Make and Model using getCarByMakeModel() function,
@@ -53,7 +66,7 @@ namespace CarDealership.BusinessLogicLayer
         {
             var car = _carFunctions.getCarByMakeModel(make, model);
 
-            return View("~/Presentation/Pages/Customer/Car.cshtml", car);
+            return View("~/Presentation/Pages/Customer/CustomerCar.cshtml", car);
         }
 
         // Returns Buy view
@@ -81,7 +94,7 @@ namespace CarDealership.BusinessLogicLayer
         {
             var car = _carFunctions.getCarByPlate(plateNum);
 
-            return View("~/Presentation/Pages/staff/Car.cshtml", car);
+            return View("~/Presentation/Pages/Staff/StaffCar.cshtml", car);
         }
 
         // Returns Sell view

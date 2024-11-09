@@ -1,4 +1,4 @@
-﻿namespace CarDealership.Models
+﻿namespace CarDealership.DataAccess
 {
     public class StaffFunctions
     {
