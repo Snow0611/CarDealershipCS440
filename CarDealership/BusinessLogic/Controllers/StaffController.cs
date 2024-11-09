@@ -1,11 +1,11 @@
 ﻿using CarDealership.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CarDealership.Controllers
+namespace CarDealership.BusinessLogicLayer.Controllers
 {
     public class StaffController : Controller
     {
-        
+
         // Defining CarFunctions and StaffFunctions objects
         private readonly CarFunctions _carFunctions;
         private readonly StaffFunctions _staffFunctions;
@@ -24,7 +24,7 @@ namespace CarDealership.Controllers
         {
             return View();
         }
-        
+
         // Gets all cars from database table using getCars() function,
         // then returns the Inventory view with all cars' data
         public ActionResult Inventory()
@@ -70,7 +70,7 @@ namespace CarDealership.Controllers
         }
 
         // Returns CarForm view
-        public ActionResult CarForm() 
+        public ActionResult CarForm()
         {
             return View();
         }
@@ -103,7 +103,7 @@ namespace CarDealership.Controllers
         // Updates car using updateCar() function,
         // then returns Update view
         public ActionResult Update(int plateNum, int lotID, string make, string model,
-            int modelYear, int price, string color, string carStatus, int salesmanID) 
+            int modelYear, int price, string color, string carStatus, int salesmanID)
         {
 
             _carFunctions.updateCar(plateNum, lotID, make, model, modelYear, price, color, carStatus, salesmanID);
@@ -143,8 +143,8 @@ namespace CarDealership.Controllers
         }
 
         // Returns MaintenanceForm view
-        public ActionResult MaintenanceForm() 
-        { 
+        public ActionResult MaintenanceForm()
+        {
             return View();
         }
 
@@ -159,14 +159,14 @@ namespace CarDealership.Controllers
         }
 
         // Returns AssignSalesmanSearch view
-        public ActionResult AssignSalesmanSearch() 
+        public ActionResult AssignSalesmanSearch()
         {
             return View();
         }
 
         // Gets car from database by plate number using getCarByPlate() function
         // then returns AssignSalesmanForm view with car's data
-        public ActionResult AssignSalesmanForm(int plateNum) 
+        public ActionResult AssignSalesmanForm(int plateNum)
         {
             var car = _carFunctions.getCarByPlate(plateNum);
 

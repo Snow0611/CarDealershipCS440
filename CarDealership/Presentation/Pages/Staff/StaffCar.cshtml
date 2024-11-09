@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "All Cars";
+    ViewData["Title"] = "View Car Details";
     Layout = null;
 }
 
@@ -7,7 +7,7 @@
 @using CarDealership.Models
 @model IEnumerable<Car>
 
-<h2>Car Inventory</h2>
+<h2>Selected Car</h2>
 
 <table>
     <tr>
@@ -39,4 +39,4 @@
     </tbody>
 </table>
 
-<a asp-controller="Customer" asp-action="Index">Return to Home Page</a>
+<a asp-controller="BusinessLogicLayer" asp-action="StaffIndex">Return to Home Page</a>
