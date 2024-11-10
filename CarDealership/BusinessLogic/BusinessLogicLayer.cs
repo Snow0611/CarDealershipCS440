@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CarDealership.BusinessLogicLayer
 {
+
+    // Due to how routing in .NET works, this class must inherit from Controller,
+    // even though this is not an MVC Architecture
     public class BusinessLogicLayer : Controller
     {
 
@@ -10,8 +13,7 @@ namespace CarDealership.BusinessLogicLayer
         private readonly CarFunctions _carFunctions;
         private readonly StaffFunctions _staffFunctions;
 
-        // Constructor for Controller
-        // Initializes CarFunctions and StaffFunctions objects,
+        // Constructor that initializes CarFunctions and StaffFunctions objects,
         // to allow use of their functions
         public BusinessLogicLayer(CarFunctions carFunctions, StaffFunctions staffFunctions)
         {
@@ -22,9 +24,7 @@ namespace CarDealership.BusinessLogicLayer
         // Returns Index view for the web site
         public ActionResult Index()
         {
-
-            return RedirectToAction("Index", "PresentationLayer");
-            //return View("~/Presentation/Pages/Index/index.cshtml");
+            return View("~/Presentation/Pages/Index/index.cshtml");
         }
 
         // Returns Index view for the customer
@@ -40,18 +40,16 @@ namespace CarDealership.BusinessLogicLayer
         }
 
         // Gets cars from database using getCars() function,
-        // then returns Inventory view with cars' data
+        // then returns Customer Inventory view with cars' data
         public ActionResult CustomerInventory()
         {
             var cars = _carFunctions.getCars();
 
-            //return PresentationLayer.CustomerInventory(cars);
-            return RedirectToAction("CustomerInventory", "PresentationLayer", cars);
-            //return View("~/Presentation/Pages/Customer/CustomerInventory.cshtml", cars);
+            return View("~/Presentation/Pages/Customer/CustomerInventory.cshtml", cars);
         }
 
-        // Gets cars from database using getCa    rs() function,
-        // then returns Inventory view with cars' data
+        // Gets cars from database using getCars() function,
+        // then returns Staff Inventory view with cars' data
         public ActionResult StaffInventory()
         {
             var cars = _carFunctions.getCars();
@@ -60,7 +58,7 @@ namespace CarDealership.BusinessLogicLayer
         }
 
         // Gets car from database by Make and Model using getCarByMakeModel() function,
-        // then returns car detail view with car's data
+        // then returns Customer car detail view with car's data
         [HttpGet]
         public ActionResult CustomerCar(string make, string model)
         {
@@ -69,32 +67,32 @@ namespace CarDealership.BusinessLogicLayer
             return View("~/Presentation/Pages/Customer/CustomerCar.cshtml", car);
         }
 
-        // Returns Buy view
-        public ActionResult Buy()
-        {
-            return View("~/Presentation/Pages/Customer/Buy.cshtml");
-        }
-
-        // Returns Search view for customer
-        public ActionResult CustomerSearch()
-        {
-            return View("~/Presentation/Pages/Customer/CustomerSearch.cshtml");
-        }
-
-        // Returns Search view for staff
-        public ActionResult StaffSearch()
-        {
-            return View("~/Presentation/Pages/Staff/StaffSearch.cshtml");
-        }
-
         // Gets car from database by plate number using getCarByPlate() function,
-        // then returns the Car detail view
+        // then returns the Staff Car detail view
         [HttpGet]
         public ActionResult StaffCar(int plateNum)
         {
             var car = _carFunctions.getCarByPlate(plateNum);
 
             return View("~/Presentation/Pages/Staff/StaffCar.cshtml", car);
+        }
+
+        // Returns Buy view
+        public ActionResult Buy()
+        {
+            return View("~/Presentation/Pages/Customer/Buy.cshtml");
+        }
+
+        // Returns Customer Search view
+        public ActionResult CustomerSearch()
+        {
+            return View("~/Presentation/Pages/Customer/CustomerSearch.cshtml");
+        }
+
+        // Returns Staff Search view
+        public ActionResult StaffSearch()
+        {
+            return View("~/Presentation/Pages/Staff/StaffSearch.cshtml");
         }
 
         // Returns Sell view
