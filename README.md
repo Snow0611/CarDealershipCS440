@@ -1,4 +1,4 @@
-#For Testing:
+For Testing:
 
 Either clone the repository and import the project into Visual Studio, or clone the repository directly into Visual Studio and pull from the remote branch.
 
