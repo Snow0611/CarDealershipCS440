@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Car Search";
+    Layout = null;
+}
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using CarDealership.CarDealership
+
+@model IEnumerable<Staff>
+
+<h2>Select Staff ID number to generate a sales report</h2>
+
+<form action="/CarDealershipSystem/SalesReport" method="get">
+    <input type="text" name="staffID" />
+    <input type="submit" value="Submit">
+</form> 

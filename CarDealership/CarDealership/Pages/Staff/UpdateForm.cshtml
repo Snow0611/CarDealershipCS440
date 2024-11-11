@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Car Form";
+    Layout = null;
+}
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using CarDealership.CarDealership
+
+@model IEnumerable<Car>
+
+<h2>Enter car information to update</h2>
+
+<table>
+    <tr>
+        <th>Plate Number</th>
+        <th>Lot Number</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>Price</th>
+        <th>Color</th>
+        <th>Condition</th>
+        <th>Salesman ID Number</th>
+    </tr>
+    <tbody>
+        @foreach (var car in Model)
+        {
+            <tr>
+                <td>@car.PlateNumber</td>
+                <td>@car.LotID</td>
+                <td>@car.Make</td>
+                <td>@car.Model</td>
+                <td>@car.ModelYear</td>
+                <td>@car.Price</td>
+                <td>@car.Color</td>
+                <td>@car.CarStatus</td>
+                <td>@car.SalesmanID</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<form action="/CarDealershipSystem/Update" method="get">
+    <br />
+    <label for="plateNum">Please confirm the plate number:</label>
+    <input type="text" id="plateNum" name="plateNum" />
+    <br />
+    <label for="make">Make:</label>
+    <input type="text" id="make" name="make" value="null" />
+    <br />
+    <label for="Model">Model:</label>
+    <input type="text" id="model" name="model" value="null" />
+    <br />
+    <label for="modelYear">Model Year:</label>
+    <input type="text" id="modelYear" name="modelYear" value="0" />
+    <br />
+    <label for="price">Price:</label>
+    <input type="text" id="price" name="price" value="0" />
+    <br />
+    <label for="color">Color:</label>
+    <input type="text" id="color" name="color" value="null" />
+    <br />
+    <label for="carStatus">Car Status:</label>
+    <input type="text" id="carStatus" name="carStatus" value="null" />
+    <br />
+    <label for="salesmanID">Salesman ID:</label>
+    <input type="text" id="salesmanID" name="salesmanID" value="1" />
+    <br />
+    <input type="submit" value="Submit">
+</form> 

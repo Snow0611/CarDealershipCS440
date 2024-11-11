@@ -1,12 +1,11 @@
 using Microsoft.EntityFrameworkCore;
-using CarDealership.DataAccess;
+using CarDealership.CarDealership;
 
 // Setting up configuration for the web api
 var builder = WebApplication.CreateBuilder(args);
 
 // Adding package references to the model classes
-builder.Services.AddScoped<CarFunctions>();
-builder.Services.AddScoped<StaffFunctions>();
+builder.Services.AddScoped<CarDealershipSystem>();
 
 // Adding controller and view support
 builder.Services.AddControllersWithViews();
@@ -22,7 +21,7 @@ var app = builder.Build();
 // a default route to the index page
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=PresentationLayer}/{action=Index}/{id?}"
+    pattern: "{controller=CarDealershipSystem}/{action=Index}/{id?}"
     );
 
 // Running the application

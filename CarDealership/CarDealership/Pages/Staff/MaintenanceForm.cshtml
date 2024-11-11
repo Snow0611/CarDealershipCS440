@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Car Search";
+    Layout = null;
+}
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using CarDealership.CarDealership
+
+@model IEnumerable<Car>
+
+<h2>Select car to assign for maintenance</h2>
+
+<form action="/CarDealershipSystem/Maintenance" method="get">
+    <label for="plateNum">Plate Number:</label>
+    <input type="text" id="plateNum" name="plateNum" />
+    <input type="hidden" name="make" value="null" />
+    <input type="hidden" name="model" value="null" />
+    <input type="hidden" name="modelYear" value="0" />
+    <input type="hidden" name="price" value="0" />
+    <input type="hidden" name="color" value="null" />
+    <input type="hidden" name="carStatus" value="Maintenance" />
+    <input type="hidden" name="salesmanID" value="-1"/>
+    <input type="submit" value="Submit">
+</form> 

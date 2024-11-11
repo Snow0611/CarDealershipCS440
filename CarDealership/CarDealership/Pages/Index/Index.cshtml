@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<html>
+    <body>
+        <div>
+            <h1>Car Dealership</h1>
+
+            <a asp-controller="CarDealershipSystem" asp-action="CustomerIndex">Customer</a>
+            <a asp-controller="CarDealershipSystem" asp-action="StaffIndex">Staff</a>
+    
+        </div>
+    </body>
+</html>

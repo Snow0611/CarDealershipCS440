@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Sales Report";
+    Layout = null;
+}
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using CarDealership.CarDealership
+@model Staff
+
+<h2>Car Inventory</h2>
+
+<h1>Sales Report for: @Model.StaffName</h1>
+<br />
+<h2>Cars Sold: @Model.CarsSold</h2>
+<h2>Profit: @Model.Profit</h2>
