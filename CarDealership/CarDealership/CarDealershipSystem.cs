@@ -2,20 +2,20 @@
 
 namespace CarDealership.CarDealership
 {
+
+    // Due to the way routing works in .NET, this class must inherit
+    // from the Controller class, even though the application is monolithic
     public class CarDealershipSystem : Controller
     {
 
         // Defining DatabaseContext object
         private readonly DatabaseContext _databaseContext;
 
-        // Constructor for Controller
-        // Initializes CarFunctions and StaffFunctions objects,
-        // to allow use of their functions
+        // Constructor that initializes DatabaseContext object
         public CarDealershipSystem(DatabaseContext databaseContext)
         {
             _databaseContext = databaseContext;
         }
-
 
         // Returns a list of all rows of Car table in database
         public List<Car> getCars()
