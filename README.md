@@ -1,5 +1,5 @@
 # CarDealershipCS440
-Car Dealership program for CS 440 Project 1
+Microservices Architecture Car Dealership program for CS 440 Project 3
 
 
-This is an Web System for Car Dealerships to keep track of and manage car inventory.
+This is a Microservices Web System for Car Dealerships to keep track of and manage car inventory.
