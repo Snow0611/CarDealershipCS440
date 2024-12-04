@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace CarDealership.Controllers
+namespace CarDealershipAPI.Controllers
 {
     public class IndexController : Controller
     {

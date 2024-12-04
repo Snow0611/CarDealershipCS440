@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace CarDealership.Models
+namespace CarDealershipAPI.Models
 {
     public class CarFunctions
     {

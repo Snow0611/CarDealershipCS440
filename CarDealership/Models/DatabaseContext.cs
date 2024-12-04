@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace CarDealership.Models
+namespace CarDealershipAPI.Models
 {
     public class DatabaseContext : DbContext
     {

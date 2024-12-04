@@ -1,4 +1,4 @@
-﻿namespace CarDealership.Models
+﻿namespace CarDealershipAPI.Models
 {
     public class StaffFunctions
     {
