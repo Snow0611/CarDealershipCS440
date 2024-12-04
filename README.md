@@ -6,3 +6,6 @@ This is a Microservices Web System for Car Dealerships to keep track of and mana
 !IMPORTANT!
 # CarDealershipInventoryMicroservice = CarDealershipCarMicroservice
 Despite renaming it to CarDealershipCarMicroservice everywhere I could find, Visual Studio refuses to rename the path of the microservice.
+
+Likewise,
+# CarDealership = CarDealershipAPI
