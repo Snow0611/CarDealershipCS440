@@ -3,12 +3,6 @@
     "CarDealership440Inventory": {
       "commandName": "Project",
       "applicationUrl": "https://localhost:7180"
-    },
-    "Docker": {
-      "commandName": "Docker",
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
-      "publishAllPorts": true,
-      "useSSL": true
     }
   }
 }
